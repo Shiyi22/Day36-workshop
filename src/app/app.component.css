@@ -1,0 +1,4 @@
+ /* to add example spaces from https://material.angular.io/components/toolbar/overview#positioning-toolbar-content */
+.example-spacer {
+    flex: 1 1 auto;
+}
