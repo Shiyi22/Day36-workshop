@@ -9,7 +9,7 @@ import { City } from '../model/city';
   templateUrl: './addcity.component.html',
   styleUrls: ['./addcity.component.css']
 })
-export class AddcityComponent implements OnInit, OnDestroy {
+export class AddcityComponent implements OnInit {
 
   form!: FormGroup
   country!: string
@@ -38,9 +38,5 @@ export class AddcityComponent implements OnInit, OnDestroy {
     this.cityObj = {country: this.country, city: this.city, imageUrl: this.imageUrl}
     this.weatherSvc.addCity(this.cityObj)
     this.router.navigate(['/'])
-  }
-
-  ngOnDestroy(): void {
-    
   }
 }

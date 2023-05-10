@@ -32,18 +32,18 @@ export class WeatherdetailsComponent implements OnInit, OnDestroy  {
     this.getWeatherDetailsFromApi(this.city)
   }
 
-  private getWeatherDetailsFromApi(city: string) {
+  getWeatherDetailsFromApi(city: string) {
     this.weatherSvc.getWeather(city, this.openweatherApiKey)
-      .then( (result) => {
+      .then( async (result) => {
         console.log(result)
-        const cityObj = this.weatherSvc.getCityUrl(city)
+        const cityImageUrl = await this.weatherSvc.getCityUrl(city)
         this.model = new Weather( // Weather is a class
           city,
           result.main.temp,
           result.main.pressure,
           result.main.humidity,
           result.weather[0].description,
-          cityObj!.imageUrl,
+          cityImageUrl,
           result.wind.speed,
           result.wind.degree
         )

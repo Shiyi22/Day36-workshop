@@ -12,9 +12,9 @@ export class ListcitiesComponent implements OnInit {
 
   constructor (private weatherSvc: WeatherService) {}
 
-  ngOnInit(): void {
-    this.weatherSvc.sortCities()
-    this.cities = this.weatherSvc.countries; 
+  async ngOnInit() {
+    // this.weatherSvc.sortCities()
+    this.cities = await this.weatherSvc.getAllCities(); 
   }
 
 }

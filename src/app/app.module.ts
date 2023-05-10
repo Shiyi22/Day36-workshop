@@ -10,6 +10,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { MaterialModule } from './material.module';
+import { WeatherService } from './services/weather.service';
+import Dexie from 'dexie';
 
 
 @NgModule({
@@ -29,7 +31,7 @@ import { MaterialModule } from './material.module';
     //   registrationStrategy: 'registerWhenStable:30000'
     // })
   ],
-  providers: [],
+  providers: [Dexie, WeatherService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
